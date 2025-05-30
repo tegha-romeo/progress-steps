@@ -30,5 +30,5 @@ A simple multi-step progress bar built with **HTML**, **CSS**, and **JavaScript*
 2. Open `index.html` in your browser
 3. Click through the steps!
 
-## 📦 Folder Structure
+
 
