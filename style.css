@@ -1,0 +1,112 @@
+:root {
+    --line-border-fill: #3498db;
+    --line-border-empty: #e0e0e0;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #000; /* Changed from #f6f7fb to black */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 10px;
+  }
+  
+  .container {
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .progress-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-bottom: 30px;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  
+  .progress-container::before {
+    content: '';
+    background-color: var(--line-border-empty);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    z-index: -1;
+  }
+  
+  .progress {
+    background-color: var(--line-border-fill);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 0%;
+    z-index: -1;
+    transition: width 0.4s ease;
+  }
+  
+  .circle {
+    background-color: #fff;
+    color: #999;
+    border: 3px solid var(--line-border-empty);
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+    z-index: 1;
+  }
+  
+  .circle.active {
+    border-color: var(--line-border-fill);
+  }
+  
+  .btn {
+    background-color: var(--line-border-fill);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 8px 30px;
+    margin: 5px;
+  }
+  
+  .btn:disabled {
+    background-color: var(--line-border-empty);
+    cursor: not-allowed;
+  }
+  
+  /* 🔁 Responsive adjustments */
+  @media (max-width: 480px) {
+    .circle {
+      width: 24px;
+      height: 24px;
+      font-size: 12px;
+    }
+  
+    .btn {
+      padding: 6px 20px;
+      font-size: 12px;
+    }
+  
+    .container {
+      max-width: 100%;
+    }
+  }
+  
